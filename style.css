@@ -7,8 +7,8 @@ html {
     align-items: center;
     background-image: url(img/pomidorka.png);
     background-repeat: no-repeat;
-    background-position: 50% 15%;
-    background-size: 600px 600px;
+    background-position: center;
+    background-size: 650px 650px;
 }
 
 h1 {
@@ -17,11 +17,14 @@ h1 {
     text-align: center;
 }
 
+
+
 .pomodoro-container {
     height: 220px;
     width: 800px;
-    
+
     margin: 0 auto;
+    padding-top: 100px;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -35,7 +38,7 @@ h1 {
     justify-self: center;
     font-size: 30px;
     font-weight: bold;
-}   
+}
 
 #work {
     grid-area: 1 / 2 / 1 / 2;
@@ -86,36 +89,40 @@ p {
     justify-self: center;
     font-weight: 500;
     transition: all 0.3s ease;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
     outline: none;
-  }
-  .btn-1 {
+}
+
+.btn-1 {
     background: rgb(10, 80, 5);
     border: none;
-  }
-  .btn-1:hover {
+}
+
+.btn-1:hover {
     background: rgb(15, 178, 58);
 
 
-  }
+}
 
-  .btn-2 {
-    background: rgb(6,14,131);
+.btn-2 {
+    background: rgb(6, 14, 131);
     border: none;
-  }
-  .btn-2:hover {
-    background: rgb(0,3,255);
-  }
+}
 
-  .btn-3 {
+.btn-2:hover {
+    background: rgb(0, 3, 255);
+}
+
+.btn-3 {
     background: rgb(131, 6, 127);
     border: none;
-  }
-  .btn-3:hover {
-     background: rgb(196, 102, 177);
-  }
+}
+
+.btn-3:hover {
+    background: rgb(196, 102, 177);
+}
 
 
 #pomodoro-start {

@@ -13,16 +13,17 @@ let counter = document.getElementById('counter');
 let startTimer;
 
 startButton.addEventListener('click', () => {
-    if(startTimer === undefined){
+    if (startTimer === undefined) {
         startTimer = setInterval(timer, 1000)
     } else {
         alert("Таймер уже запущен")
     }
+
 });
 
 resetButton.addEventListener('click', () => {
     workMinuts.innerText = 25;
-    workSeconds.innerText = "00"; 
+    workSeconds.innerText = "00";
 
     breakMinuts.innerText = 5;
     breakSeconds.innerText = "00"
@@ -38,35 +39,45 @@ pauseButton.addEventListener('click', () => {
 });
 
 
-function timer(){
+function timer() {
     // Счетчик таймера работы
-    if(workSeconds.innerText != 0){
+    if (workSeconds.innerText != 0) {
         workSeconds.innerText--;
-    } else if(workMinuts.innerText != 0 && workSeconds.innerText == 0) {
-            workSeconds.innerText = 59;
-            workMinuts.innerText--;
+    } else if (workMinuts.innerText != 0 && workSeconds.innerText == 0) {
+        workSeconds.innerText = 59;
+        workMinuts.innerText--;
     }
 
     // Счетчик таймера перерыва
-    if(workSeconds.innerText == 0 && workMinuts.innerText == 0) {
-        if(breakSeconds.innerText != 0) {
+    if (workSeconds.innerText == 0 && workMinuts.innerText == 0) {
+        if (breakSeconds.innerText != 0) {
             breakSeconds.innerText--;
-        }  else if(breakMinuts.innerText != 0 && breakSeconds.innerText == 0) {
+        } else if (breakMinuts.innerText != 0 && breakSeconds.innerText == 0) {
             breakSeconds.innerText = 59;
             breakMinuts.innerText--;
         }
     }
 
     // Счетчик кругов (работа+перерыв)
-    if(workMinuts.innerText == 0 && workSeconds.innerText == 0 && breakMinuts.innerText == 0 && breakSeconds.innerText == 0){
+    if (workMinuts.innerText == 0 && workSeconds.innerText == 0 && breakMinuts.innerText == 0 && breakSeconds.innerText == 0) {
         workMinuts.innerText = 25;
-        workSeconds.innerText = "00"; 
+        workSeconds.innerText = "00";
 
         breakMinuts.innerText = 5;
         breakSeconds.innerText = "00"
 
         counter.innerText++;
     }
+
+//    if (workMinuts.innerText == 0 && workSeconds.innerText == 0 && breakMinuts.innerText == 0 && breakSeconds.innerText == 4) {
+//         console.log("Пора отдыхать!")
+
+//     }
+
+//     if (workMinuts.innerText == 25 && workSeconds.innerText == 0 && breakMinuts.innerText == 5 && breakSeconds.innerText == 0) {
+//         console.log("Пора работать!")
+//     }
+
 }
 
 
@@ -78,5 +89,11 @@ function stopInterval() {
 
 
 
-  
+
+
+
+
+
+
+
 
