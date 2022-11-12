@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Pomodoro</title>
+    
 </head>
 <body>
-    
+    <div class="pomodoro-container">
+        <p id="work" class="label">Работа:</p><p id="break" class="label">Перерыв:</p><p id="cycles" class="label">Круги:</p>
+        
+        <!--Work Timer-->
+        <div id="work-timer" class="timer"> 
+            <p id="w_minutes">25</p><p class="semicolon">:</p><p id="w_seconds">00</p>
+        </div>
+
+        <p id="counter" class="timer">0</p>
+
+        <!--break Timer-->
+        <div id="break-timer" class="timer"> 
+            <p id="b_minutes">5</p>
+            <p class="semicolon">:</p>
+            <p id="b_seconds">00</p>
+        </div>
+
+        
+        <button id="pomodoro-start" class="custom-btn btn-1">Старт</button>
+        <button id="pomodoro-pause" class="custom-btn btn-2">Пауза</button>
+        <button id="pomodoro-reset" class="custom-btn btn-3">Сбросить</button>
+        
+
+
+        <div class="pomodoro-clock">
+            <div class="pomodoro-timer"></div>
+
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
 </body>
+
+
 </html>
