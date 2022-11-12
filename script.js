@@ -2,15 +2,24 @@ const startButton = document.querySelector("#pomodoro-start");
 const pauseButton = document.querySelector('#pomodoro-pause');
 const resetButton = document.querySelector('#pomodoro-reset');
 
+const workButton = document.getElementById('btn-work');
+const breakButton = document.getElementById('btn-break');
+
 const workMinuts = document.getElementById('w_minutes');
 const workSeconds = document.getElementById('w_seconds');
 
 const breakMinuts = document.getElementById('b_minutes');
 const breakSeconds = document.getElementById('b_seconds');
 
+const workInput = document.getElementById('workTime');
+const breakInput = document.getElementById('breakTime');
+
 let counter = document.getElementById('counter');
 
 let startTimer;
+
+let defWorkTime = 25;
+let defBreakTime = 5;
 
 startButton.addEventListener('click', () => {
     if (startTimer === undefined) {
@@ -22,10 +31,10 @@ startButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
-    workMinuts.innerText = 25;
+    workMinuts.innerText = defWorkTime;
     workSeconds.innerText = "00";
 
-    breakMinuts.innerText = 5;
+    breakMinuts.innerText = defBreakTime;
     breakSeconds.innerText = "00"
 
     counter.innerText = 0;
@@ -38,6 +47,15 @@ pauseButton.addEventListener('click', () => {
     startTimer = undefined;
 });
 
+workButton.addEventListener('click', () => {
+    defWorkTime = workInput.value;
+    workMinuts.innerText = defWorkTime;
+})
+
+breakButton.addEventListener('click', () => {
+    defBreakTime = breakInput.value;
+    breakMinuts.innerText = defBreakTime;
+})
 
 function timer() {
     // Счетчик таймера работы
@@ -60,23 +78,14 @@ function timer() {
 
     // Счетчик кругов (работа+перерыв)
     if (workMinuts.innerText == 0 && workSeconds.innerText == 0 && breakMinuts.innerText == 0 && breakSeconds.innerText == 0) {
-        workMinuts.innerText = 25;
+        workMinuts.innerText = defWorkTime;
         workSeconds.innerText = "00";
 
-        breakMinuts.innerText = 5;
+        breakMinuts.innerText = defBreakTime;
         breakSeconds.innerText = "00"
 
         counter.innerText++;
     }
-
-//    if (workMinuts.innerText == 0 && workSeconds.innerText == 0 && breakMinuts.innerText == 0 && breakSeconds.innerText == 4) {
-//         console.log("Пора отдыхать!")
-
-//     }
-
-//     if (workMinuts.innerText == 25 && workSeconds.innerText == 0 && breakMinuts.innerText == 5 && breakSeconds.innerText == 0) {
-//         console.log("Пора работать!")
-//     }
 
 }
 

@@ -8,13 +8,14 @@ html {
     background-image: url(img/pomidorka.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 650px 650px;
+    background-size: 700px 700px;
 }
 
-h1 {
+h2 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    text-transform: uppercase;
 }
 
 
@@ -31,7 +32,22 @@ h1 {
     grid-template-rows: repeat(3, 1fr);
 }
 
+.tools-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.tools-text {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.form {
+    margin: 5px;
+
+}
 
 .label {
     align-self: center;
@@ -122,6 +138,19 @@ p {
 
 .btn-3:hover {
     background: rgb(196, 102, 177);
+}
+
+.btn-4 {
+    background: rgb(10, 80, 5);
+    border: none;
+    width: 40px;
+    height: 30px;
+}
+
+.btn-4:hover {
+    background: rgb(15, 178, 58);
+
+
 }
 
 
