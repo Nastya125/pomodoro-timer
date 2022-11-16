@@ -17,9 +17,7 @@
         <div class="work-container">
             <p id="work" class="label">Работа:</p>  
             <div id="work-timer" class="timer work-timer">
-                <p id="w_minutes">25</p>
-                <p class="semicolon">:</p>
-                <p id="w_seconds">00</p>
+                <p id="w_times">25:00</p>
             </div>
             <button id="pomodoro-start" class="custom-btn btn-1">Старт</button>
         </div>
@@ -34,9 +32,7 @@
         <div class="break-container">
             <p id="break" class="label">Перерыв:</p>
             <div id="break-timer" class="timer">
-                <p id="b_minutes">5</p>
-                <p class="semicolon">:</p>
-                <p id="b_seconds">00</p>
+                <p id="b_times">5:00</p>
             </div>
             <button id="pomodoro-reset" class="custom-btn btn-3">Сбросить</button>
         </div>
@@ -48,19 +44,17 @@
         <form class="form" action="">
             <label for="workTime" class="tools-text">Время работы (мин): </label>
             <input type="number" id="workTime" min="1" max="1000" value="25">
-            <button type='button' class="custom-btn btn-4" id="btn-work">Ок</button>
+            <button type='button' class="custom-btn btn-4" id="btn-work" type="submit">Ок</button>
         </form>
 
-        <form class="form" action="">
-            <label for="workTime" class="tools-text">Время перерыва (мин): </label>
-            <input type="number" id="breakTime" min="1" max="1000" value="5">
-            <button type='button' class="custom-btn btn-4" id="btn-break">Ок</button>
+        <form class="form" action="" name="break-submit">
+            <label for="breakTime" class="tools-text">Время перерыва (мин): </label>
+            <input name="break-submit" type="number" id="breakTime" min="1" max="1000" value="5">
+            <button name="break-submit" type='button' class="custom-btn btn-4" id="btn-break" type="submit">Ок</button>
         </form>
-
-
     </div>
 
-    <script src="/script.js"></script>
+    <script src="script2.js"></script>
 </body>
 
 
