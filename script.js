@@ -57,27 +57,35 @@ breakButton.addEventListener('click', () => {
     breakMinuts.innerText = defBreakTime;
 })
 
+
+
 function timer() {
     // Счетчик таймера работы
-    if (workSeconds.innerText != 0) {
+    let numberWorkSeconds = Number(workSeconds.innerText);
+    let numberWorkMinuts = Number(workMinuts.innerText);
+
+    let numberBreakSeconds = Number(breakSeconds.innerText);
+    let numberBreakMinuts = Number(breakMinuts.innerText);
+    
+    if (numberWorkSeconds) {
         workSeconds.innerText--;
-    } else if (workMinuts.innerText != 0 && workSeconds.innerText == 0) {
+    } else if (numberWorkMinuts && !numberWorkSeconds) {
         workSeconds.innerText = 59;
         workMinuts.innerText--;
     }
 
     // Счетчик таймера перерыва
-    if (workSeconds.innerText == 0 && workMinuts.innerText == 0) {
-        if (breakSeconds.innerText != 0) {
+    if (!numberWorkSeconds && !numberWorkMinuts) {
+        if (numberBreakSeconds) {
             breakSeconds.innerText--;
-        } else if (breakMinuts.innerText != 0 && breakSeconds.innerText == 0) {
+        } else if (numberBreakMinuts && !numberBreakSeconds) {
             breakSeconds.innerText = 59;
             breakMinuts.innerText--;
         }
     }
 
     // Счетчик кругов (работа+перерыв)
-    if (workMinuts.innerText == 0 && workSeconds.innerText == 0 && breakMinuts.innerText == 0 && breakSeconds.innerText == 0) {
+    if (!numberWorkMinuts && !numberWorkSeconds && !numberBreakMinuts && !numberBreakSeconds) {
         workMinuts.innerText = defWorkTime;
         workSeconds.innerText = "00";
 
