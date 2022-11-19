@@ -14,7 +14,7 @@ const breakSeconds = document.getElementById('b_seconds');
 const workInput = document.getElementById('workTime');
 const breakInput = document.getElementById('breakTime');
 
-let counter = document.getElementById('counter');
+const counter = document.getElementById('counter');
 
 let startTimer;
 
@@ -58,34 +58,28 @@ breakButton.addEventListener('click', () => {
 })
 
 
-
 function timer() {
     // Счетчик таймера работы
-    let numberWorkSeconds = Number(workSeconds.innerText);
-    let numberWorkMinuts = Number(workMinuts.innerText);
-
-    let numberBreakSeconds = Number(breakSeconds.innerText);
-    let numberBreakMinuts = Number(breakMinuts.innerText);
     
-    if (numberWorkSeconds) {
+    if (+workSeconds.innerText) {
         workSeconds.innerText--;
-    } else if (numberWorkMinuts && !numberWorkSeconds) {
+    } else if (+workMinuts.innerText && !+workSeconds.innerText) {
         workSeconds.innerText = 59;
         workMinuts.innerText--;
     }
 
     // Счетчик таймера перерыва
-    if (!numberWorkSeconds && !numberWorkMinuts) {
-        if (numberBreakSeconds) {
+    if (!+workSeconds.innerText && !+workMinuts.innerText) {
+        if (+breakSeconds.innerText) {
             breakSeconds.innerText--;
-        } else if (numberBreakMinuts && !numberBreakSeconds) {
+        } else if (+breakMinuts.innerText && !+breakSeconds.innerText) {
             breakSeconds.innerText = 59;
             breakMinuts.innerText--;
         }
     }
 
     // Счетчик кругов (работа+перерыв)
-    if (!numberWorkMinuts && !numberWorkSeconds && !numberBreakMinuts && !numberBreakSeconds) {
+    if (!+workMinuts.innerText && !+workSeconds.innerText && !+breakMinuts.innerText && !+breakSeconds.innerText) {
         workMinuts.innerText = defWorkTime;
         workSeconds.innerText = "00";
 
